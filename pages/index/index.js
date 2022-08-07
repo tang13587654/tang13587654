@@ -1,18 +1,26 @@
+import ShopModel from "../../model/shop"
 // index.js
 Page({
+
+  async getShopBanner(){
+    const res = await ShopModel.getShopBanner()
+    this.setData({
+      bannerData : res.data
+    })
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    bannerData : []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getShopBanner()
   },
 
   /**
