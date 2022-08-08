@@ -1,2 +1,3 @@
-<!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<view class="container">
+  <i-swiper data="{{bannerData}}"></i-swiper>
+</view>
