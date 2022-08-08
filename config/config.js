@@ -6,5 +6,17 @@ const ApiConfig={
     baseURL : 'http://weixin.itying.com' 
   }
 }
+// 白名单
+const whiteList=[
+  "/login",
+  "/404",
+  "/401",
+  "/settings"
+]
+// 字段
+const field={
+  loginCredentials : 'token',
+  userInfoKey : 'userInfo'
+}
 
-export {ApiConfig}
+export {ApiConfig,whiteList,field}
