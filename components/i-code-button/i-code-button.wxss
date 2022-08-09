@@ -26,3 +26,8 @@
   width: 180rpx;
   text-align: center;
 }
+
+.sanCode{
+  border-radius: 15rpx;
+  background-color: #FEBE1B;
+}

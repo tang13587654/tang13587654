@@ -1,6 +1,14 @@
-<view class="main">
+<view wx:if="{{type=='circle'}}" class="main">
   <view class="code-button" bindtap="handleScanCode">
     <image class="image" src="/assets/images/qrcode.png"></image>
     <text class="text">请扫描商品条形码</text>
   </view>
 </view>
+
+<view wx:if="{{type=='add'}}" bindtap="handleScanCode">继续添加</view>
+
+<view wx:if="{{type=='button'}}">
+  <button class="sanCode" bindtap="handleScanCode">扫一扫条形码</button>
+</view>
+
+

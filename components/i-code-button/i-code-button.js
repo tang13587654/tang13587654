@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    type:String
   },
 
   /**
@@ -22,7 +22,7 @@ Component({
       wx.scanCode({
         onlyFromCamera: true,
         success:(res)=>{
-          this.triggerEvent("getResult",res.result)
+          this.triggerEvent("getResult",{code:res.result,type:this.properties.type})
         },
         fail:(error)=>{
           console.log("取消扫码")

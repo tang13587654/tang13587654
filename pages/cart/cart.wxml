@@ -1,2 +1,30 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="container" wx:if="{{cartList.length>0}}">
+  <view class="list">
+    <view class="list-item" wx:for="{{cartList}}" wx:key="index">
+      <view class="item-title">{{item.title}}</view>
+      <view class="item-sku">{{item.description}}</view>
+      <view class="item-price">￥{{item.price}}</view>
+      <view class="item-group">
+        <view bindtap="handleDecrement" data-index="{{index}}" class="decrement">-</view>
+        <input class="count" type="text" disabled value="{{item.num}}" />
+        <view bindtap="handleIncrement" data-index="{{index}}" class="increment">+</view>
+      </view>
+    </view>
+  </view>
+  <view class="settle-ment">
+    <view class="total-price">
+      <text>总计:</text>
+      <text class="price">¥{{totalPrice}}</text>
+    </view>
+    <view class="button-group">
+      <i-code-button class="add" type="add" bind:getResult="getShopCode"></i-code-button>
+      <view class="settle">去结算({{cartList.length}})</view>
+    </view>
+  </view>
+</view>
+
+<view class="container empty-cart" wx:else>
+  <text class="tips">购物车是空的哦~</text>
+  <image class="cartImage" src="/assets/images/cart.png"></image>
+ <i-code-button type="button" bind:getResult="getShopCode"></i-code-button>
+</view>

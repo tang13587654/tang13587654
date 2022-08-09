@@ -1,6 +1,6 @@
 import ShopModel from "../../model/shop"
 import {navigateTo} from "../../utils/navigate"
-import {addCart} from "../../common/cart"
+import {getShopCode} from "../../common/cart"
 
 
 // pages/shop/shop.js
@@ -13,22 +13,7 @@ Page({
     })
   },
   // 获取商品信息
-  async getShopCode(event){
-    const code=event.detail
-    if(!code) return
-    try {
-      const res =await ShopModel.getShopingInfo(code)
-      if(!res.success) return
-      const result =res.result
-      if(result.length<=0) return
-
-      addCart(result[0])
-       // 跳转到购物车页面
-       navigateTo("/pages/cart/cart")
-    } catch (error) {
-      console.log(error);
-    }
-  },
+  getShopCode:getShopCode,
   /**
    * 页面的初始数据
    */
