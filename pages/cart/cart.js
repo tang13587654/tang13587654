@@ -1,5 +1,6 @@
 // pages/cart/cart.js
 import Storage from "../../utils/storage"
+import {navigateTo} from "../../utils/navigate"
 import {addCart, getShopCode} from "../../common/cart"
 Page({
   
@@ -9,6 +10,10 @@ Page({
   data: {
     cartList : [],
     totalPrice:0
+  },
+  // 去结算
+  handleSettle(){
+    navigateTo('/pages/order/order')
   },
   async getShopCode(event){
     await getShopCode(event)

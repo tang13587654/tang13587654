@@ -18,7 +18,7 @@
     </view>
     <view class="button-group">
       <i-code-button class="add" type="add" bind:getResult="getShopCode"></i-code-button>
-      <view class="settle">去结算({{cartList.length}})</view>
+      <view class="settle" bindtap="handleSettle">去结算({{cartList.length}})</view>
     </view>
   </view>
 </view>

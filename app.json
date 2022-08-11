@@ -3,7 +3,9 @@
         "pages/shop/shop",
         "pages/every/every",
         "pages/cart/cart",
-        "pages/my/my"
+        "pages/my/my",
+        "pages/order/order",
+        "pages/payment/payment"
     ],
     "window": {
         "backgroundTextStyle": "light",
