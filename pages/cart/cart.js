@@ -2,13 +2,17 @@
 import Storage from "../../utils/storage"
 import {addCart, getShopCode} from "../../common/cart"
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
     cartList : [],
     totalPrice:0
+  },
+  async getShopCode(event){
+    await getShopCode(event)
+    this.getCartList()
   },
   // 获取购物车数据
   getCartList(){
@@ -17,7 +21,6 @@ Page({
     this.setData({
       cartList
     })
-    this.getShopCode
     this.computedTotalPrice()
   },
   // 计算总价
@@ -71,7 +74,7 @@ Page({
       }
     })    
   },
-  getShopCode:getShopCode,
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -83,7 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    this.getCartList()
+    
   },
 
   /**
